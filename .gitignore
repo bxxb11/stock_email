@@ -1,0 +1,21 @@
+# Sensitive config (contains credentials)
+config.json
+stock_news_config.json
+
+# Generated chart data
+charts_b64.json
+*.b64
+
+# Generated HTML outputs
+stock_news_*.html
+email_log.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+
+# macOS
+.DS_Store
