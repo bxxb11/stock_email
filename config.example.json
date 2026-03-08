@@ -1,0 +1,11 @@
+{
+  "sender_email": "your_email@gmail.com",
+  "gmail_app_password": "xxxx xxxx xxxx xxxx",
+  "recipients": [
+    "recipient1@example.com",
+    "recipient2@example.com"
+  ],
+  "subject": "股票新闻 - PLTR & 英伟达每日简报",
+  "stocks": ["PLTR", "NVDA"],
+  "send_time": "21:00"
+}
