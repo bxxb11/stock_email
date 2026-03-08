@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>股票新闻 · 2026年03月07日</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#0d0d0d;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display','Helvetica Neue',Arial,sans-serif;color:#f5f5f7;min-width:320px}
+.container{max-width:640px;margin:0 auto;background:#0d0d0d}
+/* HEADER */
+.header{background:linear-gradient(135deg,#1c1c1e 0%,#0d0d0d 100%);padding:36px 32px 28px;border-bottom:1px solid #1e1e1e;text-align:center}
+.header-eyebrow{font-size:11px;font-weight:600;letter-spacing:3px;color:#636366;text-transform:uppercase;margin-bottom:12px}
+.header-title{font-size:36px;font-weight:700;letter-spacing:-1px;color:#f5f5f7;margin-bottom:6px}
+.header-sub{font-size:13px;color:#636366;letter-spacing:0.5px}
+/* TICKER CHIPS */
+.chips{display:flex;gap:10px;justify-content:center;padding:20px 32px 0}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600;letter-spacing:0.2px}
+.chip-green{background:rgba(48,209,88,0.12);border:1px solid rgba(48,209,88,0.3);color:#30d158}
+.chip-blue{background:rgba(10,132,255,0.12);border:1px solid rgba(10,132,255,0.3);color:#0a84ff}
+/* PRICE CARDS */
+.cards{display:flex;gap:12px;padding:20px 24px}
+.card{flex:1;background:#1c1c1e;border-radius:16px;padding:20px;border:1px solid #2a2a2a}
+.card-ticker{font-size:12px;font-weight:700;letter-spacing:2px;color:#636366;text-transform:uppercase;margin-bottom:4px}
+.card-name{font-size:11px;color:#48484a;margin-bottom:12px}
+.card-price{font-size:28px;font-weight:700;letter-spacing:-0.5px;color:#f5f5f7;margin-bottom:4px}
+.badge-green{display:inline-block;background:rgba(48,209,88,0.15);color:#30d158;font-size:11px;font-weight:600;padding:3px 8px;border-radius:8px}
+.badge-red{display:inline-block;background:rgba(255,59,48,0.15);color:#ff3b30;font-size:11px;font-weight:600;padding:3px 8px;border-radius:8px}
+.card-meta{font-size:10px;color:#636366;margin-top:10px;line-height:1.6}
+/* CHART SECTION */
+.chart-section{padding:8px 24px 20px}
+.chart-label{font-size:11px;font-weight:600;letter-spacing:2px;color:#636366;text-transform:uppercase;margin-bottom:8px;padding-left:4px}
+.chart-wrap{background:#111111;border-radius:14px;overflow:hidden;border:1px solid #222;margin-bottom:14px;text-align:center}
+.chart-img{width:100%;max-width:100%;height:auto;display:block;border-radius:14px}
+/* DIVIDER */
+.section-divider{margin:8px 24px;border:none;border-top:1px solid #1e1e1e}
+/* NEWS */
+.section-header{padding:20px 24px 12px;display:flex;align-items:center;gap:10px}
+.section-icon{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.icon-green{background:rgba(48,209,88,0.12)}
+.icon-blue{background:rgba(10,132,255,0.12)}
+.section-title{font-size:15px;font-weight:700;color:#f5f5f7}
+.section-sub{font-size:11px;color:#636366;margin-top:1px}
+.news-list{padding:0 24px 8px}
+.news-item{border-left:3px solid #2a2a2a;padding:12px 14px;margin-bottom:10px;background:#1c1c1e;border-radius:0 12px 12px 0;position:relative}
+.news-item.green{border-left-color:#30d158}
+.news-item.blue{border-left-color:#0a84ff}
+.news-item.orange{border-left-color:#ff9f0a}
+.news-headline{font-size:13px;font-weight:600;color:#f5f5f7;margin-bottom:5px;line-height:1.45}
+.news-desc{font-size:11.5px;color:#8e8e93;line-height:1.6}
+.news-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 6px;border-radius:5px;margin-bottom:6px}
+.tag-up{background:rgba(48,209,88,0.12);color:#30d158}
+.tag-down{background:rgba(255,59,48,0.12);color:#ff3b30}
+.tag-neutral{background:rgba(255,159,10,0.12);color:#ff9f0a}
+/* ANALYST */
+.analyst-row{display:flex;gap:10px;padding:4px 24px 8px}
+.analyst-card{flex:1;background:#1c1c1e;border-radius:12px;padding:14px;border:1px solid #2a2a2a;text-align:center}
+.analyst-firm{font-size:10px;color:#636366;font-weight:600;letter-spacing:0.5px;margin-bottom:6px}
+.analyst-action{font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;margin-bottom:8px;display:inline-block}
+.action-buy{background:rgba(48,209,88,0.12);color:#30d158}
+.action-hold{background:rgba(255,159,10,0.12);color:#ff9f0a}
+.action-sell{background:rgba(255,59,48,0.12);color:#ff3b30}
+.analyst-target{font-size:18px;font-weight:700;color:#f5f5f7}
+.analyst-sub{font-size:9px;color:#48484a;margin-top:2px}
+/* SENTIMENT */
+.sentiment-box{margin:12px 24px;background:#1c1c1e;border-radius:14px;padding:18px 20px;border:1px solid #2a2a2a}
+.sentiment-title{font-size:12px;font-weight:700;letter-spacing:0.5px;color:#f5f5f7;margin-bottom:12px}
+.sentiment-row{display:flex;gap:8px;margin-bottom:10px;align-items:center}
+.sentiment-label{font-size:11px;color:#636366;width:40px;flex-shrink:0}
+.sentiment-bar{flex:1;height:6px;background:#2a2a2a;border-radius:3px;overflow:hidden}
+.bar-fill{height:100%;border-radius:3px}
+.bar-green{background:linear-gradient(90deg,#30d158,#32d74b)}
+.bar-red{background:linear-gradient(90deg,#ff3b30,#ff453a)}
+.sentiment-pct{font-size:11px;font-weight:600;color:#f5f5f7;width:35px;text-align:right;flex-shrink:0}
+/* FOOTER */
+.footer{padding:28px 24px 32px;text-align:center;border-top:1px solid #1e1e1e;margin-top:16px}
+.footer-logo{font-size:14px;font-weight:700;color:#3a3a3c;margin-bottom:8px;letter-spacing:1px}
+.footer-text{font-size:10px;color:#3a3a3c;line-height:1.7;max-width:380px;margin:0 auto}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-eyebrow">每日股票简报 · 2026年03月07日</div>
+  <div class="header-title">股票新闻</div>
+  <div class="header-sub">Daily Market Intelligence · PLTR &amp; NVDA</div>
+</div>
+
+<!-- CHIPS -->
+<div class="chips">
+  <span class="chip chip-green">▲ PLTR $157.16 +10.8%本周</span>
+  <span class="chip chip-blue">▼ NVDA $178.03 -2.7%今日</span>
+</div>
+
+<!-- PRICE CARDS -->
+<div class="cards">
+  <div class="card">
+    <div class="card-ticker">PLTR</div>
+    <div class="card-name">Palantir Technologies</div>
+    <div class="card-price">$157.16</div>
+    <span class="badge-green">▲ +$4.49 &nbsp;+2.94%</span>
+    <div class="card-meta">目标价 $188（28位分析师均值）<br>52周区间 $83 – $125<br>本周涨幅 +10.8%</div>
+  </div>
+  <div class="card">
+    <div class="card-ticker">NVDA</div>
+    <div class="card-name">NVIDIA Corporation</div>
+    <div class="card-price">$178.03</div>
+    <span class="badge-red">▼ -$4.92 &nbsp;-2.7%</span>
+    <div class="card-meta">市值 $4.32万亿 · 分析师共识 买入<br>52周区间 $86.62 – $212.19<br>GTC 2026 · 3月16-19日</div>
+  </div>
+</div>
+
+<!-- PLTR CHART -->
+<div class="chart-section">
+  <div class="chart-label">📈 PLTR · 30日价格走势</div>
+  <div class="chart-wrap">
+    <img class="chart-img" id="chart-pltr" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="PLTR Chart" style="min-height:180px;background:#111">
+  </div>
+  <div class="chart-label">📊 NVDA · 30日价格走势</div>
+  <div class="chart-wrap">
+    <img class="chart-img" id="chart-nvda" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="NVDA Chart" style="min-height:180px;background:#111">
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- PLTR NEWS -->
+<div class="section-header">
+  <div class="section-icon icon-green">🟢</div>
+  <div><div class="section-title">PLTR · Palantir 要闻</div><div class="section-sub">最新三条重要新闻</div></div>
+</div>
+<div class="news-list">
+  <div class="news-item green">
+    <div class="news-tag tag-up">升级评级</div>
+    <div class="news-headline">Daiwa Securities 升级至 Buy · 目标价 $180</div>
+    <div class="news-desc">Daiwa 认为 Palantir 美国商业 AI 采用正在加速，政府收入基础稳固，将评级从中性上调至买入，并设定 $180 目标价；Rosenblatt 则将目标价上调至 $200，28 位分析师平均预期 $188。</div>
+  </div>
+  <div class="news-item green">
+    <div class="news-tag tag-up">业绩亮眼</div>
+    <div class="news-headline">Q4 营收 $14亿 同比增长 70%，美国商业部门飙升 137%</div>
+    <div class="news-desc">Palantir 第四季度营收 $1.41 亿，同比大增 70%，美国商业业务增长 137%。公司发布 2026 全年指引约 $71.9 亿，远超市场预期，股价周涨 10.8%。</div>
+  </div>
+  <div class="news-item orange">
+    <div class="news-tag tag-neutral">高估值争议</div>
+    <div class="news-headline">Goldman：当前 243x 远期市盈率已充分定价增长预期</div>
+    <div class="news-desc">Goldman Sachs 指出，PLTR 当前 PE 超过 243 倍远期收益，P/S 超 40 倍，在分析师看多背景下仍发出估值警告，认为近期增长利好已大部分反映在股价中。</div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- NVDA NEWS -->
+<div class="section-header">
+  <div class="section-icon icon-blue">🔵</div>
+  <div><div class="section-title">NVDA · 英伟达 要闻</div><div class="section-sub">最新三条重要新闻</div></div>
+</div>
+<div class="news-list">
+  <div class="news-item blue">
+    <div class="news-tag tag-neutral">大会预期</div>
+    <div class="news-headline">GTC 2026 · 3月16-19日 · 推理芯片新品即将亮相</div>
+    <div class="news-desc">英伟达 GPU 技术大会 GTC 2026 将于 3 月 16–19 日在圣何塞举行。市场预期黄仁勋将正式发布针对 AI 推理优化的新一代芯片，进一步巩固数据中心 AI 基础设施主导地位。</div>
+  </div>
+  <div class="news-item blue">
+    <div class="news-tag tag-up">战略合作</div>
+    <div class="news-headline">英伟达与 Meta 签署多年多代战略合作协议</div>
+    <div class="news-desc">NVIDIA 宣布与 Meta 达成横跨私有云、公有云及 AI 基础设施的多年多代战略合作，涵盖数据中心 GPU 集群供应及定制化 AI 解决方案，强化双方在大模型训练推理领域的协同。</div>
+  </div>
+  <div class="news-item blue">
+    <div class="news-tag tag-up">供应扩大</div>
+    <div class="news-headline">H200 芯片将于3月中旬向中国发货，台积电接获 200万片订单</div>
+    <div class="news-desc">英伟达计划于 3 月中旬开始向中国发运 H200 芯片（利用现有库存），同时要求台积电增产以满足 2026 年度 200 万片 H200 的庞大订单，AI 芯片需求持续旺盛。</div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- ANALYST TARGETS -->
+<div class="section-header">
+  <div class="section-icon" style="background:rgba(255,214,10,0.1)">📋</div>
+  <div><div class="section-title">分析师目标价</div><div class="section-sub">华尔街最新评级</div></div>
+</div>
+<div class="analyst-row">
+  <div class="analyst-card">
+    <div class="analyst-firm">Daiwa Securities</div>
+    <div class="analyst-action action-buy">Buy ↑</div>
+    <div class="analyst-target">$180</div>
+    <div class="analyst-sub">PLTR · 升级</div>
+  </div>
+  <div class="analyst-card">
+    <div class="analyst-firm">Rosenblatt</div>
+    <div class="analyst-action action-buy">Buy ↑</div>
+    <div class="analyst-target">$200</div>
+    <div class="analyst-sub">PLTR · 上调</div>
+  </div>
+  <div class="analyst-card">
+    <div class="analyst-firm">Piper Sandler</div>
+    <div class="analyst-action action-buy">Overweight</div>
+    <div class="analyst-target">$230</div>
+    <div class="analyst-sub">PLTR · 维持</div>
+  </div>
+</div>
+<div class="analyst-row">
+  <div class="analyst-card">
+    <div class="analyst-firm">37位分析师</div>
+    <div class="analyst-action action-buy">Buy共识</div>
+    <div class="analyst-target">$204</div>
+    <div class="analyst-sub">NVDA · 12M目标</div>
+  </div>
+  <div class="analyst-card">
+    <div class="analyst-firm">Goldman Sachs</div>
+    <div class="analyst-action action-hold">中性警告</div>
+    <div class="analyst-target">$243x</div>
+    <div class="analyst-sub">PLTR · 估值风险</div>
+  </div>
+  <div class="analyst-card">
+    <div class="analyst-firm">28位分析师</div>
+    <div class="analyst-action action-buy">Buy</div>
+    <div class="analyst-target">$188</div>
+    <div class="analyst-sub">PLTR · 共识均值</div>
+  </div>
+</div>
+
+<!-- SENTIMENT -->
+<div class="sentiment-box">
+  <div class="sentiment-title">📡 市场情绪指标 · 2026年03月07日</div>
+  <div class="sentiment-row">
+    <div class="sentiment-label">PLTR 多</div>
+    <div class="sentiment-bar"><div class="bar-fill bar-green" style="width:74%"></div></div>
+    <div class="sentiment-pct">74%</div>
+  </div>
+  <div class="sentiment-row">
+    <div class="sentiment-label">PLTR 空</div>
+    <div class="sentiment-bar"><div class="bar-fill bar-red" style="width:26%"></div></div>
+    <div class="sentiment-pct">26%</div>
+  </div>
+  <div class="sentiment-row">
+    <div class="sentiment-label">NVDA 多</div>
+    <div class="sentiment-bar"><div class="bar-fill bar-green" style="width:81%"></div></div>
+    <div class="sentiment-pct">81%</div>
+  </div>
+  <div class="sentiment-row">
+    <div class="sentiment-label">NVDA 空</div>
+    <div class="sentiment-bar"><div class="bar-fill bar-red" style="width:19%"></div></div>
+    <div class="sentiment-pct">19%</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-logo">MARKET BRIEF</div>
+  <div class="footer-text">本简报由 AI 自动生成，仅供参考，不构成投资建议。<br>数据截至 2026年03月07日 美东时间。请以官方数据为准。<br>若不希望继续接收，请回复邮件告知。</div>
+</div>
+
+</div>
+</body>
+</html>
